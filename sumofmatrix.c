@@ -1,11 +1,12 @@
 #include<stdio.h>
 void main()
 {
-	int row,col,i,j,sum=0;
-	printf("enter rows & columns:");
-	scanf("%d%d",&row,&col);
-	int a[row][col];
-	printf("enter matrix\n");
+	int a[50][50],b[50][50],i,j,c[50][50],col,row;
+	printf("enter how many rows:");
+	scanf("%d",&row);
+	printf("enter how many columns:");
+	scanf("%d",&col);
+	printf("enter first matrix");
 	for(i=0; i<row; i++)
 	{
 		for(j=0; j<col; j++)
@@ -13,15 +14,28 @@ void main()
 			scanf("%d",&a[i][j]);
 		}
 	}
-	printf("\n display matrix\n");
+	printf("enter second matrix");
 	for(i=0; i<row; i++)
 	{
 		for(j=0; j<col; j++)
 		{
-		  printf("%d\t",a[i][j]);
-		  sum=sum+a[i][j];
+			scanf("%d",&b[i][j]);
 		}
-	    printf("\n");
 	}
-	printf("\nsum of elements of matrix=%d",sum);
+	for(i=0; i<row; i++)
+	{
+		for(j=0; i<col; j++)
+		{
+			c[i][j]=a[i][j]+b[i][j];
+		}
+	}
+	printf("sum of two matrices");
+	for(i=0; i<row; i++)
+	{
+		for(j=0; j<col; j++)
+		{
+			printf("%d\t",c[i][j]);
+		}
+		printf("\n");
+	}
 }
